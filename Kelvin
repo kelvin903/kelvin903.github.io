@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body {
+      background: pink;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      width: 220px;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+    }
+
+    #yay {
+      display: none;
+      font-size: 40px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="login">
+    <h2>NEW LOGIN 💥</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="yay">
+    🎉 YAY!!! 🎉
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user !== "" && pass !== "") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("yay").style.display = "block";
+      } else {
+        alert("Fill everything 😅");
+      }
+    }
+  </script>
+
+</body>
+</html>
