@@ -1,72 +1,210 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kelvin's Hub</title>
+
   <style>
-    body {
-      background: pink;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 120px;
     }
 
-    input {
-      display: block;
-      margin: 10px auto;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-      width: 220px;
-    }
-
-    button {
-      padding: 12px 30px;
-      font-size: 18px;
-      border-radius: 10px;
-      border: none;
-      background: #ff4d6d;
+    body {
+      background: #0f172a;
       color: white;
-      cursor: pointer;
     }
 
-    #yay {
-      display: none;
-      font-size: 40px;
-      margin-top: 30px;
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(15, 23, 42, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: #38bdf8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* SECTIONS */
+    section {
+      min-height: 100vh;
+      padding: 100px 30px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #home {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
+
+    #about {
+      background: #111827;
+    }
+
+    #services {
+      background: #0b1220;
+    }
+
+    #contact {
+      background: #111827;
+    }
+
+    h1 {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #38bdf8;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 18px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #38bdf8;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #0f172a;
+      color: gray;
     }
   </style>
 </head>
 
 <body>
 
-  <div id="login">
-    <h2>NEW LOGIN 💥</h2>
+  <!-- NAVBAR -->
+  <nav>
+    <h2>Kelvin's Hub</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
+  <!-- HOME -->
+  <section id="home">
+    <h1>Welcome to Kelvin's Hub 👋</h1>
+    <p>Thanks for visiting Kelvin's Hub. This is a modern beginner-friendly website built with HTML and CSS.</p>
+    <button class="btn" onclick="alert('Welcome to Kelvin’s Hub 🚀')">
+      Get Started
+    </button>
+  </section>
 
-    <button onclick="login()">Login</button>
-  </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Kelvin's Hub is a simple project website built to practice web development.
+      It includes navigation, sections, and modern styling to help you learn frontend basics.
+    </p>
+  </section>
 
-  <div id="yay">
-    🎉 YAY!!! 🎉
-  </div>
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Services</h2>
 
-  <script>
-    function login() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
+    <div class="card-container">
+      <div class="card">
+        <h3>Web Design</h3>
+        <p>Clean and modern website designs.</p>
+      </div>
 
-      if (user !== "" && pass !== "") {
-        document.getElementById("login").style.display = "none";
-        document.getElementById("yay").style.display = "block";
-      } else {
-        alert("Fill everything 😅");
-      }
-    }
-  </script>
+      <div class="card">
+        <h3>Frontend Dev</h3>
+        <p>HTML, CSS and JavaScript websites.</p>
+      </div>
+
+      <div class="card">
+        <h3>Learning Hub</h3>
+        <p>Practice projects for beginners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Want to reach Kelvin's Hub? You can connect via email or social media (demo section).</p>
+    <button class="btn" onclick="alert('Message feature coming soon!')">
+      Send Message
+    </button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Kelvin's Hub. All rights reserved.
+  </footer>
 
 </body>
 </html>
